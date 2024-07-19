@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL documento de Dom</title>
+    <style>
+
+        :root {
+            --color-primario: #f00;
+            --color-secundario: #0f0;
+            --color-terciario: #00f;
+        }
+
+        * {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: auto;
+            margin-bottom: 100px;
+            background-color: #f1f1f1;
+
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        .lista {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .red {
+            color: var(--color-primario);
+        }
+
+        .green {
+            color: var(--color-secundario);
+        }
+
+        .blue {
+            color: var(--color-terciario);
+        }
+
+        #que-es{
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+        }
+
+        .unactive{
+            background-color: #ffdede;
+            color: #333;
+        }
+
+        .active{
+            background-color: #333 ;
+            color: #fff;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+            overflow: hidden;
+            position: relative;
+            padding: 10px;
+            transition: box-shadow 0.3s ease;
+
+            & figcaption{
+                margin-top: 10px;
+            }
+        }
+
+        .title{
+            text-align: center;
+            width: 100%;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .list{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            & li{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                list-style: none;
+                width: 40px;
+                padding: 0.5rem;
+                background-color: #333;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+
+
+                transition: background-color 0.3s ease;
+
+                &:hover{
+                    background-color: #555;
+                }
+            }
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript</h1>
+
+    <p id="que-es">
+        <span class="red">Lorem</span> <span class="green">ipsum</span> <span class="blue">dolor</span> sit, amet consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum doloribus,
+        magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium fuga fugit.
+    </p>
+
+    <nav id="menu">
+        <ul>
+            <li class="primero"><a href="#">Sección 1</a></li>
+            <li><a href="#">Sección 2</a></li>
+            <li><a href="#">Sección 3</a></li>
+            <li><a href="#">Sección 4</a></li>
+            <li class="ultimo"> <a href="#">Sección 5</a></li>
+        </ul>
+    </nav>
+
+    <input type="text" name="nombre" placeholder="Nombre">
+
+    <a href="./index.html" class="link-dom" data-description="Document Object Model">Link Dom</a>
+
+    <button>Click me</button>
+
+    <section class="cards">
+        <figure class="card">
+            <img src="https://via.placeholder.com/200x200" alt="Tech">
+            <figcaption>Tech</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://via.placeholder.com/200x200" alt="Animals">
+            <figcaption>Animals</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://via.placeholder.com/200x200" alt="People">
+            <figcaption>People</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://via.placeholder.com/200x200" alt="Arch">
+            <figcaption>Arch</figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://via.placeholder.com/200x200" alt="Nature">
+            <figcaption>Nature</figcaption>
+        </figure>
+    </section>
+
+    <script src="./142_dom_modificando_elementos.js"></script>
+</body>
+
+</html>

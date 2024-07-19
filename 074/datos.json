@@ -1,0 +1,16 @@
+{
+    "nombre": "Juan",
+    "edad": 30,
+    "casado": false,
+    "hijos": ["Pedro", "Pablo", "María"],
+    "mascotas": [
+        {
+            "nombre": "Firulais",
+            "edad": 5
+        },
+        {
+            "nombre": "Misi",
+            "edad": 3
+        }
+    ]
+}
