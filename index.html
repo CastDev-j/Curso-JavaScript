@@ -48,6 +48,22 @@
             margin-top: 1rem;
         }
 
+        h3 {
+            text-align: center;
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        h4 {
+            text-align: center;
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
         .lista {
             display: flex;
             justify-content: center;
@@ -63,6 +79,16 @@
             border: none;
             cursor: pointer;
             margin-top: 1rem;
+        }
+
+        button:disabled {
+            background-color: #999;
+            color: #fff;
+        }
+        
+        button:disabled:hover {
+            background-color: #999;
+            color: #fff;
         }
 
         button:hover {
@@ -161,6 +187,24 @@
             }
         }
 
+        #saludo{
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }   
+
+        /*style decoration for saludo after and before*/
+        #saludo::before{
+            content: '"';
+            color: #333;
+            font-weight: bold;
+        }
+
+        #saludo::after{
+            content: '"';
+            color: #333;
+            font-weight: bold;
+        }
 
 
     </style>
@@ -174,46 +218,24 @@
         magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium fuga fugit.
     </p>
 
-    <nav id="menu">
-        <ul>
-            <li class="primero"><a href="#">Sección 1</a></li>
-            <li><a href="#">Sección 2</a></li>
-            <li><a href="#">Sección 3</a></li>
-            <li><a href="#">Sección 4</a></li>
-            <li class="ultimo"> <a href="#">Sección 5</a></li>
-        </ul>
-    </nav>
-
-    <input type="text" name="nombre" placeholder="Nombre">
-
-    <a href="./index.html" class="link-dom" data-description="Document Object Model">Link Dom</a>
-
-    <button>Click me</button>
-
-    <section class="cards">
+    <!-- <section class="cards">
         <figure class="card">
             <img src="https://via.placeholder.com/200x200" alt="Tech">
             <figcaption>Tech</figcaption>
         </figure>
-        <figure class="card">
-            <img src="https://via.placeholder.com/200x200" alt="Animals">
-            <figcaption>Animals</figcaption>
-        </figure>
-        <figure class="card">
-            <img src="https://via.placeholder.com/200x200" alt="People">
-            <figcaption>People</figcaption>
-        </figure>
-        <figure class="card">
-            <img src="https://via.placeholder.com/200x200" alt="Arch">
-            <figcaption>Arch</figcaption>
-        </figure>
-        <figure class="card">
-            <img src="https://via.placeholder.com/200x200" alt="Nature">
-            <figcaption>Nature</figcaption>
-        </figure>
-    </section>
+    </section> -->
 
-    <script src="./142_dom_modificando_elementos.js"></script>
+    <h3>Eventos en JavaScript</h3>
+    <h4>Manejadores de Eventos</h4>
+    <button id="boton-multiple">Evento con Manejadore de Evento Multiple JavaScript</button>
+    <p id="saludo"></p>
+    <br><br><br><br>
+    <button id="joke">Disable this</button>
+    
+    
+
+
+    <script src="./158_dom_eventos_parametros.js"></script>
 </body>
 
 </html>
