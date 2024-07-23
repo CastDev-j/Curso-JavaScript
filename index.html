@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EL documento de Dom</title>
     <style>
-
         :root {
-            --color-primario: #f00;
-            --color-secundario: #0f0;
-            --color-terciario: #00f;
+            --color-primario: rgb(255, 171, 171);
+            --color-secundario: rgb(187, 255, 187);
+            --color-terciario: rgb(207, 207, 255);
         }
 
         * {
@@ -85,7 +84,7 @@
             background-color: #999;
             color: #fff;
         }
-        
+
         button:disabled:hover {
             background-color: #999;
             color: #fff;
@@ -107,7 +106,7 @@
             color: var(--color-terciario);
         }
 
-        #que-es{
+        #que-es {
             padding: 1rem;
             border-radius: 5px;
             margin-bottom: 2rem;
@@ -116,13 +115,13 @@
 
         }
 
-        .unactive{
+        .unactive {
             background-color: #ffdede;
             color: #333;
         }
 
-        .active{
-            background-color: #333 ;
+        .active {
+            background-color: #333;
             color: #fff;
         }
 
@@ -146,26 +145,26 @@
             padding: 10px;
             transition: box-shadow 0.3s ease;
 
-            & figcaption{
+            & figcaption {
                 margin-top: 10px;
             }
         }
 
-        .title{
+        .title {
             text-align: center;
             width: 100%;
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .list{
+        .list {
             display: flex;
             flex-direction: row;
             justify-content: center;
             flex-wrap: wrap;
             gap: 1rem;
 
-            & li{
+            & li {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -181,32 +180,73 @@
 
                 transition: background-color 0.3s ease;
 
-                &:hover{
+                &:hover {
                     background-color: #555;
                 }
             }
         }
 
-        #saludo{
+        #saludo {
             text-align: center;
             font-size: 1.5rem;
             margin-top: 1rem;
-        }   
+        }
 
         /*style decoration for saludo after and before*/
-        #saludo::before{
+        #saludo::before {
             content: '"';
             color: #333;
             font-weight: bold;
         }
 
-        #saludo::after{
+        #saludo::after {
             content: '"';
             color: #333;
             font-weight: bold;
         }
 
+        .eventos-flujo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
 
+            & div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+                color: #333;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                text-align: center;
+
+                &:hover {
+                    background-color: #f1f1f1;
+                }
+            }
+
+            .uno {
+                background-color: var(--color-primario);
+            }
+
+            .dos {
+                background-color: var(--color-secundario);
+            }
+
+            .tres {
+                background-color: var(--color-terciario);
+            }
+
+            .test-una-sola-vez{
+                background-color: #333;
+                color: #fff;
+            }
+        }
     </style>
 </head>
 
@@ -214,7 +254,8 @@
     <h1>JavaScript</h1>
 
     <p id="que-es">
-        <span class="red">Lorem</span> <span class="green">ipsum</span> <span class="blue">dolor</span> sit, amet consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum doloribus,
+        <span class="red">Lorem</span> <span class="green">ipsum</span> <span class="blue">dolor</span> sit, amet
+        consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum doloribus,
         magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium fuga fugit.
     </p>
 
@@ -225,17 +266,35 @@
         </figure>
     </section> -->
 
-    <h3>Eventos en JavaScript</h3>
+    <!-- 158 Dom -->
+    <!-- <h3>Eventos en JavaScript</h3>
     <h4>Manejadores de Eventos</h4>
     <button id="boton-multiple">Evento con Manejadore de Evento Multiple JavaScript</button>
     <p id="saludo"></p>
     <br><br><br><br>
     <button id="joke">Disable this</button>
-    
-    
+     -->
+
+    <!-- 159 Flujo de Eventos -->
+    <h3>Flujo de Eventos</h3>
+    <section class="eventos-flujo">
+        <div class="uno">
+            Uno
+            <div class="dos">
+                Dos
+                <div class="tres">
+                    Tres
+                </div>
+            </div>
+        </div>
 
 
-    <script src="./158_dom_eventos_parametros.js"></script>
+        <div class="test-una-sola-vez">Solo una vez</div>
+    </section>
+
+
+
+    <script src="./165_dom_flujo_eventos.js"></script>
 </body>
 
 </html>
