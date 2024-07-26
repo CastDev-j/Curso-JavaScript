@@ -8,7 +8,7 @@ let d = document;
 d.addEventListener("DOMContentLoaded", function (e) {
     hamburgerMenu('#deployer', '#hamburguer-menu', '#menu li a');
     relojAlarma('#clock', '#start-clock', '#stop-clock', '#start-alarm', '#stop-alarm', 'assets/alarm.mp3');
-    bolita('#canvas', 100, 'blue',  'up', 'down', 'left', 'right');
+    bolita('#canvas', 20, 'blue',  'up', 'down', 'left', 'right');
     comandosPersonalizados();
     tiempoRestante('time-left');
 });

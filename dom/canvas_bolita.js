@@ -11,13 +11,13 @@ export default function bolita(canva, radio, color, up, down, left, right) {
 
 
     canva = d.querySelector(canva);
-    let ctx = canva.getContext('2d');
-    let x = 200;
-    let y = 200;
+    let x = radio + 5;
+    let y = radio + 5;
     let dx = 10;
     let dy = 10;
 
     function dibujar() {
+        let ctx = canva.getContext('2d');
         ctx.clearRect(0, 0, canva.width, canva.height);
         ctx.beginPath();
         ctx.arc(x, y, radio, 0, Math.PI * 2);
@@ -30,19 +30,19 @@ export default function bolita(canva, radio, color, up, down, left, right) {
 
 
     let moveUp = () => {
-        y -= (y < radio + 5) ? 0 : dy;
+        y -= (y < radio + radio/2) ? 0 : dy;
         up.classList.add('active');
     }
     let moveDown = () => {
-        y += (y > canva.height - radio - 5) ? 0 : dy;
+        y += (y > canva.height - radio - radio/2) ? 0 : dy;
         down.classList.add('active');
     }
     let moveLeft = () => {
-        x -= (x < radio + 5) ? 0 : dx;
+        x -= (x < radio + radio/2) ? 0 : dx;
         left.classList.add('active');
     }
     let moveRight = () => {
-        x += (x > canva.width - radio - 5) ? 0 : dx;
+        x += (x > canva.width - radio - radio/2) ? 0 : dx;
         right.classList.add('active');
     }
 
