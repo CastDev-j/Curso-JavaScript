@@ -11,6 +11,12 @@
             --color-secundario: rgb(255, 255, 255);
         }
 
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -192,8 +198,71 @@
                 font-size: 3rem;
                 margin: 20px;
             }
+
             & #clock.active {
                 display: block;
+            }
+        }
+
+        #canvas {
+            border: 1px solid var(--color-primario);
+            background-color: var(--color-primario);
+        }
+
+        .comandos {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 20px;
+
+            & span {
+                color: var(--color-primario);
+                font-size: 1.5rem;
+                margin: 10px;
+            }
+
+            & .title {
+                font-weight: bold;
+            }
+
+            & .key {
+                display: flex;
+                padding: 10px;
+                color: var(--color-secundario);
+                background-color: var(--color-primario);
+                border-radius: 10px;
+            }
+
+            & .key.active {
+                background-color: var(--color-secundario);
+                color: var(--color-primario);
+            }
+        }
+
+        #time-left {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            min-height: 50px;
+            overflow: hidden;
+            background-color: var(--color-primario);
+            padding: 10px;
+            
+
+
+            margin: 20px;
+            font-weight: bold;
+
+
+            & .text {
+                font-size: 2rem;
+                color: var(--color-secundario);
+                font-weight: normal;
+                margin-right: 10px;
             }
         }
     </style>
@@ -240,18 +309,22 @@
 
             <article id="section-2">
                 <h2>Sección 2</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum
-                    doloribus, magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium
-                    fuga
-                    fugit.</p>
+                <h3>La bolita y el teclado</h3>
+                <section class="comandos">
+                    <span class="title">Comandos:</span>
+                    <span id="up" class="key">W: Arriba</span>
+                    <span id="down" class="key">S: Abajo</span>
+                    <span id="left" class="key">A: Izquierda</span>
+                    <span id="right" class="key">D: Derecha</span>
+                </section>
+  
+                <canvas id="canvas" width="760" height="400"></canvas>
             </article>
 
             <article id="section-3">
                 <h2>Sección 3</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum
-                    doloribus, magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium
-                    fuga
-                    fugit.</p>
+                <h3>Tiempo Restante del año</h3>
+                <p id="time-left">230 dias</p>
             </article>
 
             <article id="section-4">
