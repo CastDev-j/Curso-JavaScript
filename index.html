@@ -7,351 +7,281 @@
     <title>EL documento de Dom</title>
     <style>
         :root {
-            --color-primario: rgb(255, 171, 171);
-            --color-secundario: rgb(187, 255, 187);
-            --color-terciario: rgb(207, 207, 255);
-        }
-
-        * {
-            font-family: Arial, sans-serif;
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
+            --color-primario: rgb(58, 58, 58);
+            --color-secundario: rgb(255, 255, 255);
         }
 
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: auto;
-            margin-bottom: 100px;
-            background-color: #f1f1f1;
-
-            width: 70%;
-            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        h1 {
-            text-align: center;
-            color: #333;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
-        }
-
-        h3 {
-            text-align: center;
-            color: #333;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
-        }
-
-        h4 {
-            text-align: center;
-            color: #333;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
-        }
-
-        .lista {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-            margin-bottom: 2rem;
-        }
-
-        button {
-            padding: 0.5rem 1rem;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-
-        button:disabled {
-            background-color: #999;
-            color: #fff;
-        }
-
-        button:disabled:hover {
-            background-color: #999;
-            color: #fff;
-        }
-
-        button:hover {
-            background-color: #555;
-        }
-
-        .red {
-            color: var(--color-primario);
-        }
-
-        .green {
-            color: var(--color-secundario);
-        }
-
-        .blue {
-            color: var(--color-terciario);
-        }
-
-        #que-es {
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 2rem;
-
-            transition: background-color 0.3s ease, color 0.3s ease;
-
-        }
-
-        .unactive {
-            background-color: #ffdede;
-            color: #333;
-        }
-
-        .active {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .cards {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            margin: 1rem;
-            overflow: hidden;
-            position: relative;
-            padding: 10px;
-            transition: box-shadow 0.3s ease;
-
-            & figcaption {
-                margin-top: 10px;
-            }
-        }
-
-        .title {
-            text-align: center;
-            width: 100%;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .list {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-
-            & li {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                list-style: none;
-                width: 40px;
-                padding: 0.5rem;
-                background-color: #333;
-                color: #fff;
-                border-radius: 5px;
-                cursor: pointer;
-
-
-                transition: background-color 0.3s ease;
-
-                &:hover {
-                    background-color: #555;
-                }
-            }
-        }
-
-        #saludo {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        /*style decoration for saludo after and before*/
-        #saludo::before {
-            content: '"';
-            color: #333;
-            font-weight: bold;
-        }
-
-        #saludo::after {
-            content: '"';
-            color: #333;
-            font-weight: bold;
-        }
-
-        .eventos-flujo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 2rem;
-
-            & div {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1.5rem;
-                color: #333;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-                text-align: center;
-
-                &:hover {
-                    background-color: #f1f1f1;
-                }
-            }
-
-            .uno {
-                background-color: var(--color-primario);
-            }
-
-            .dos {
-                background-color: var(--color-secundario);
-            }
-
-            .tres {
-                background-color: var(--color-terciario);
-            }
-
-            .test-una-sola-vez {
-                background-color: #333;
-                color: #fff;
-            }
-        }
-
-        .size {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #f1f1f1;
-            background-color: #333;
-            padding: 1rem;
-            border-radius: 5px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-
-
-
-            & .width {
-                color: var(--color-primario);
-            }
-
-            & .height {
-                color: var(--color-secundario);
-            }
-
-        }
-
-        /* the scroll values are fixet at top right ina box */
-        .scroll-values {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 1rem;
+        #hamburguer-menu {
+            display: block;
             position: fixed;
             top: 0;
-            right: 10px;
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
 
-            & h2 {
-                color: #f1f1f1;
-                font-size: 1.5rem;
+            transition-delay: 0.5s;
+            transition: left 0.5s ease, opacity 0.5s ease;
+        }
+
+        #hamburguer-menu.deployed {
+            left: 0;
+        }
+
+        #menu {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: rgba(255, 255, 255, .9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: auto;
+
+        }
+
+        #menu li {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+
+
+            &:last-child {
+                border-bottom: none;
             }
 
-            & .lista {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                gap: 1rem;
+            & a {
+                padding: 20px;
+                text-decoration: none;
+                color: var(--color-primario);
+                font-size: 1.5rem;
+                width: 100%;
+                display: block;
 
-                & li {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 1rem;
-                    font-weight: bold;
-                }
+            }
+        }
 
-                & span {
-                    font-size: 1.5rem;
-                }
+        #menu li:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
 
-                & #scroll-y {
+        #menu-deployer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        #deployer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: var(--color-secundario);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        #deployer.deployed::before {
+            content: "Des";
+        }
+
+        #deployer:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        #main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+
+            & article {
+                width: 100%;
+                max-width: 800px;
+                min-height: 350px;
+                margin: 20px 0;
+                padding: 20px;
+                background-color: var(--color-secundario);
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+                & h2 {
                     color: var(--color-primario);
+                    font-size: 2rem;
+                    margin-bottom: 10px;
                 }
 
-                & #scroll-x {
-                    color: var(--color-secundario);
+                & h3 {
+                    color: var(--color-primario);
+                    font-size: 1.5rem;
+                    margin-bottom: 10px;
+                }
+
+                & p {
+                    color: var(--color-primario);
+                    font-size: 1.5rem;
                 }
             }
         }
 
+        header {
+            background-color: var(--color-primario);
+            color: var(--color-secundario);
+            padding: 20px;
+            text-align: center;
+            font-size: 2rem;
+        }
 
-        #bom-box{
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        #section-1 {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
-            margin-top: 2rem;
 
-            & button{
-                padding: 0.5rem 1rem;
-                background-color: #333;
-                color: #fff;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-                transition: background-color 0.3s ease;
+            & .buttons {
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+
+
+                & button {
+                    background-color: var(--color-primario);
+                    color: var(--color-secundario);
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 10px;
+                    font-size: 1.5rem;
+                    margin: 10px;
+                    cursor: pointer;
+                }
+
+                & button:hover {
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+
+                & button:disabled {
+                    background-color: rgba(0, 0, 0, 0.2);
+                    cursor: not-allowed;
+                }
             }
 
-            & button:hover{
-                background-color: #555;
+            & #clock {
+                display: none;
+                font-size: 3rem;
+                margin: 20px;
             }
-
+            & #clock.active {
+                display: block;
+            }
         }
     </style>
 </head>
 
 <body>
-    
-    <!-- 193_bom_propiedades_eventos.js
+
+    <section id="hamburguer-menu">
+        <ul id="menu">
+            <li><a href="#section-1">Sección 1</a></li>
+            <li><a href="#section-2">Sección 2</a></li>
+            <li><a href="#section-3">Sección 3</a></li>
+            <li><a href="#section-4">Sección 4</a></li>
+            <li><a href="#section-5">Sección 5</a></li>
+        </ul>
+    </section>
+
+    <section id="menu-deployer">
+        <button id="deployer">desplegar</button>
+    </section>
+
+
+
+    <header>
+        Ejericios de Dom
+    </header>
+
+    <main>
+        <section id="main-content">
+            <article id="section-1">
+                <h2>Sección 1</h2>
+                <h3>El reloj y la Alarma</h3>
+
+                <span id="clock" class=""></span>
+                <section class="buttons">
+                    <button id="start-clock">Iniciar Reloj</button>
+                    <button id="stop-clock">Detener Reloj</button>
+                    <button id="start-alarm">Iniciar Alarma</button>
+                    <button id="stop-alarm">Detener Alarma</button>
+                </section>
+
+
+            </article>
+
+            <article id="section-2">
+                <h2>Sección 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum
+                    doloribus, magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium
+                    fuga
+                    fugit.</p>
+            </article>
+
+            <article id="section-3">
+                <h2>Sección 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum
+                    doloribus, magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium
+                    fuga
+                    fugit.</p>
+            </article>
+
+            <article id="section-4">
+                <h2>Sección 4</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum
+                    doloribus, magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium
+                    fuga
+                    fugit.</p>
+            </article>
+
+            <article id="section-5">
+                <h2>Sección 5</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum
+                    doloribus, magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium
+                    fuga
+                    fugit.</p>
+            </article>
+        </section>
+    </main>
+
+
+    <script src="index_dom.js" type="module"></script>
+</body>
+
+</html>
+
+
+
+
+<!-- 193_bom_propiedades_eventos.js
      <section class="scroll-values">
         <h2>Scroll</h2>
         <ul class="lista">
@@ -366,7 +296,7 @@
     <h2>Tamaño completo ventana</h2>
     <figure class="size"><span class="width">#</span> x <span class="height">#</span></figure> -->
 
-
+<!-- 
     <h1>JavaScript</h1>
 
     <p id="que-es">
@@ -374,19 +304,19 @@
         consectetur adipisicing elit. Nesciunt et expedita, necessitatibus in cum doloribus,
         magnam nulla culpa facere est vero rem. Cumque praesentium nam quaerat magnam accusantium fuga fugit.
     </p>
+ -->
 
 
 
-
-    <!-- <section class="cards">
+<!-- <section class="cards">
         <figure class="card">
             <img src="https://via.placeholder.com/200x200" alt="Tech">
             <figcaption>Tech</figcaption>
         </figure>
     </section> -->
 
-    <!-- 158 Dom -->
-    <!-- <h3>Eventos en JavaScript</h3>
+<!-- 158 Dom -->
+<!-- <h3>Eventos en JavaScript</h3>
     <h4>Manejadores de Eventos</h4>
     <button id="boton-multiple">Evento con Manejadore de Evento Multiple JavaScript</button>
     <p id="saludo"></p>
@@ -394,8 +324,8 @@
     <button id="joke">Disable this</button>
      -->
 
-    <!-- 159 Flujo de Eventos -->
-    <!-- <h3>Flujo de Eventos</h3>
+<!-- 159 Flujo de Eventos -->
+<!-- <h3>Flujo de Eventos</h3>
     <section class="eventos-flujo">
         <div class="uno">
             Uno
@@ -411,16 +341,10 @@
         <div class="test-una-sola-vez">Solo una vez</div>
     </section> -->
 
-
+<!-- 
     <section id="bom-box">
         <button id="abrir">Abrir ventana</button>
         <button id="cerrar">Cerrar ventana</button>
         <button id="imprimir">Imprimir ventana</button>
     </section>
-
-
-
-    <script src="./194_bom_metodos.js"></script>
-</body>
-
-</html>
+ -->
