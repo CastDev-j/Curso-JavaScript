@@ -1,12 +1,18 @@
 :root {
     --color-primario: rgb(58, 58, 58);
+    --color-primario-claro: rgba(0, 0, 0, 0.5);
+    --color-primario-ultra-claro: rgba(0, 0, 0, 0.1);
     --color-secundario: rgb(255, 255, 255);
+    --color-terciario: rgba(184, 184, 184, 0.5);
+    --color-terciario-claro: rgba(184, 184, 184, 0.2);
 }
 
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 body {
@@ -23,7 +29,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--color-primario-claro);
     z-index: 1000;
 
     transition-delay: 0.5s;
@@ -44,18 +50,17 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: var(--color-secundario);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px var(--color-primario-claro);
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
     overflow: auto;
-
 }
 
 #menu li {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--color-primario-ultra-claro);
     text-align: center;
     width: 100%;
     box-sizing: border-box;
@@ -77,7 +82,7 @@ body {
 }
 
 #menu li:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--color-primario-ultra-claro);
 }
 
 #menu-deployer {
@@ -88,7 +93,7 @@ body {
 }
 
 #deployer {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--color-primario);
     color: var(--color-secundario);
     padding: 10px 20px;
     border: none;
@@ -102,7 +107,7 @@ body {
 }
 
 #deployer:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--color-primario-claro);
 }
 
 #main-content {
@@ -119,7 +124,7 @@ body {
         padding: 20px;
         background-color: var(--color-secundario);
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 10px var(--color-primario-claro);
 
         & h2 {
             color: var(--color-primario);
@@ -162,25 +167,27 @@ html {
         display: flex;
         align-items: center;
         margin-top: 20px;
+        flex-wrap: wrap;
 
 
         & button {
+            display: block;
             background-color: var(--color-primario);
             color: var(--color-secundario);
-            padding: 10px 20px;
-            border: none;
+            padding: 10px 20px; 
+            border: none; 
             border-radius: 10px;
-            font-size: 1.5rem;
+            font-size: 1.3rem; 
             margin: 10px;
             cursor: pointer;
         }
 
         & button:hover {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: var(--color-primario-claro);
         }
 
         & button:disabled {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: var(--color-primario-ultra-claro);
             cursor: not-allowed;
         }
     }
@@ -247,7 +254,7 @@ html {
     overflow: hidden;
     background-color: var(--color-primario);
     padding: 10px;
-    
+
 
 
     margin: 20px;
@@ -261,3 +268,70 @@ html {
         margin-right: 10px;
     }
 }
+
+.bottom-botons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+
+
+    & button {
+        display: block;
+        width: 100%;
+        height: 50px;
+        font-size: 1.5rem;
+
+        background-color: var(--color-terciario-claro);
+        color: var(--color-primario);
+        padding: 10px 20px;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+
+        backdrop-filter: blur(2px);
+        box-shadow: 0 0 20px var(--color-terciario-claro);
+
+        transition: background-color 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    & button:hover {
+        background-color: var(--color-terciario);
+    }
+
+    & button.hidden {
+        visibility: hidden;
+        opacity: 0;
+        cursor: not-allowed;
+    }
+}
+/* input[type="checkbox"]  */
+.dark-light-mode{
+    display: none;
+}
+
+/* label of checkbox */
+.label-dark-light{
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+
+/* input[type="checkbox"]:checked + label */
+
