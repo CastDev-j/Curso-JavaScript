@@ -1,23 +1,41 @@
 
 let d = document;
+let ls = localStorage;
 export default function darkLightMode(btn, darkMode = false) {
     btn = document.querySelector(btn);
 
-    d.addEventListener("click", (e) => {
-        if (e.target === btn) {
 
+    
+
+
+    d.addEventListener("click", (e) => {
+
+        darkMode = ls.getItem('darkMode') == 'true' ? true : false;
+
+        if (e.target === btn)
             if (darkMode) {
                 setLightMode();
-                darkMode = false;
+                ls.setItem('darkMode', false);
                 btn.innerHTML = "Modo Oscuro";
             } else {
                 setDarkMode();
-                darkMode = true;
+                ls.setItem('darkMode', true);
                 btn.innerHTML = "Modo Claro";
             }
-        }
+
     })
-    
+
+    d.addEventListener("DOMContentLoaded", (e) => {
+        if (darkMode == 'true') {
+            setDarkMode();
+            btn.innerHTML = "Modo Claro";
+        } else {
+            setLightMode();
+            btn.innerHTML = "Modo Oscuro";
+        }
+    });
+
+
 
 
 }
